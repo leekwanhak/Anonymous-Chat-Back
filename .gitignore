@@ -1,0 +1,4 @@
+my-chat-app\node_modules
+my-chat-app\config\cofing.json
+my-chat-app\config\.env
+my-chat-app\config\.env-dev
