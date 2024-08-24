@@ -1,0 +1,70 @@
+//채널 채팅 사용자정보 테이블
+
+module.exports = function (sequelize, DataTypes) {
+  return sequelize.define(
+    "channel_member",
+    {
+      member_id: {
+        type: DataTypes.INTEGER,
+        autoIncrement: true,
+        primaryKey: true,
+        allowNull: false,
+        comment: "회원 고유번호",
+      },
+      gender: {
+        type: DataTypes.TINYINT,
+        allowNull: false,
+        comment: "성별코드 0:남자 1:여자",
+      },
+      department: {
+        type: DataTypes.INTEGER,
+        allowNull: false,
+        comment: "학과코드",
+      },
+      active_state_code: {
+        type: DataTypes.BOOLEAN,
+        allowNull: false,
+        comment: "현재 접속여부코드 0:미접속상태 1:접속중상태",
+      },
+      last_login: {
+        type: DataTypes.DATE,
+        allowNull: false,
+        comment: "마지막 로그인일시",
+      },
+      nick_name: {
+        type: DataTypes.STRING(100),
+        allowNull: true,
+        comment: "대화명-닉네임-> allowNull 추후 변경가능",
+      },
+      profile_img_path: {
+        type: DataTypes.STRING(300),
+        allowNull: true,
+        comment: "회원프로파일 이미지경로",
+      },
+      connection_id: {
+        type: DataTypes.STRING(100),
+        allowNull: false,
+        comment: "웹소켓 고유연결 아이디",
+      },
+      ip_address: {
+        type: DataTypes.STRING(50),
+        allowNull: false,
+        comment: "사용자 IP",
+      },
+    },
+    {
+      sequelize,
+      tableName: "channel_member",
+      timestamps: false,
+      comment: "채팅사용자정보",
+      indexes: [
+        {
+          name: "PRIMARY",
+          unique: true,
+          using: "BTREE",
+          fields: [{ name: "member_id" }],
+        },
+      ],
+    }
+  );
+};

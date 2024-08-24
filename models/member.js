@@ -24,6 +24,36 @@ module.exports = function (sequelize, DataTypes) {
         allowNull: false,
         comment: "회원명",
       },
+      gender: {
+        type: DataTypes.TINYINT,
+        allowNull: false,
+        comment: "성별코드 0:남자 1:여자",
+      },
+      department: {
+        type: DataTypes.INTEGER,
+        allowNull: false,
+        comment: "학과코드",
+      },
+      active_state_code: {
+        type: DataTypes.TINYINT,
+        allowNull: false,
+        comment: "현재 접속여부코드 0:미접속상태 1:접속중상태",
+      },
+      last_login: {
+        type: DataTypes.DATE,
+        allowNull: false,
+        comment: "마지막 로그인일시",
+      },
+      connection_id: {
+        type: DataTypes.STRING(100),
+        allowNull: false,
+        comment: "웹소켓 고유연결 아이디",
+      },
+      ip_address: {
+        type: DataTypes.STRING(50),
+        allowNull: false,
+        comment: "사용자 IP",
+      },
       profile_img_path: {
         type: DataTypes.STRING(300),
         allowNull: true,

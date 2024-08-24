@@ -1,4 +1,4 @@
-node_modules
-cofing.json
+my-chat-app/node_modules/
+my-chat-app/config/config.json/
 .env
-env-dev
+.env-dev

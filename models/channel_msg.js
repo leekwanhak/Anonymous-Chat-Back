@@ -1,3 +1,5 @@
+//채널 채팅 이력 정보
+
 module.exports = function (sequelize, DataTypes) {
   return sequelize.define(
     "channel_msg",

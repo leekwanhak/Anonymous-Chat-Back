@@ -27,11 +27,11 @@ db.Sequelize = Sequelize; //Sequelize팩키지에서 제공하는 각종 데이�
 
 //전체 모델 모듈파일 참조하고 db속성정의하기
 db.Member = require("./member.js")(sequelize, Sequelize);
-db.ChannelMember = require("./channel_member.js")(sequelize, Sequelize);
-db.ChannelMsg = require("./channel_msg.js")(sequelize, Sequelize);
+db.Channel = require("./channel.js")(sequelize, Sequelize);
+// db.ChannelMember = require("./channel_member.js")(sequelize, Sequelize);
+// db.ChannelMsg = require("./channel_msg.js")(sequelize, Sequelize);
 // db.ArticleFile = require("./article_file.js")(sequelize, Sequelize);
 // db.Article = require("./article.js")(sequelize, Sequelize);
-// db.Channel = require("./channel.js")(sequelize, Sequelize);
 
 //db객체 외부로 노출하기
 module.exports = db;
